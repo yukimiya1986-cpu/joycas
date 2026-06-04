@@ -1094,8 +1094,17 @@ body {
 
   /* features */
   .feat-grid { grid-template-columns: 1fr; }
-  .fcard.wide { grid-column: span 1; }
-  .fcard { padding: 28px 22px; }
+  .fcard { padding: 28px 22px; gap: 16px; }
+  .fcard.wide {
+    grid-column: span 1;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .fcard.wide .fcard-img {
+    width: 72px; height: 72px;
+    margin-bottom: 4px;
+  }
+  .fcard-img { width: 64px; height: 64px; }
 
   /* access */
   #p5 .p-inner { flex-direction: column; padding: 0; }
