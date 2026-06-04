@@ -1067,6 +1067,16 @@ body {
   .p-deco { font-size: 160px; bottom: 0; right: -10px; }
   .p-label { position: static; margin-bottom: 8px; }
 
+  /* hide decorative line breaks so text wraps naturally to screen width */
+  br.brk { display: none; }
+
+  /* let body text use full width and breathe */
+  .p-body, .hero-body, .contact-desc, .sec-lead {
+    max-width: 100%;
+    line-height: 1.9;
+  }
+  .p-h1, .p-h2, .hero-h1 { max-width: 100%; }
+
   /* hero */
   #p0 .p-inner { flex-direction: column-reverse; padding: 0; min-height: 0; }
   .hero-img-col { width: 100%; height: 240px; }
@@ -1194,14 +1204,14 @@ body {
         <div class="hero-txt">
           <div class="hero-kicker">名古屋市天白区・原駅から徒歩1分</div>
           <h1 class="hero-h1">
-            あなたと社会をつなげる、<br>
-            <em>その手伝いを</em><br>
+            あなたと社会をつなげる、<br class="brk">
+            <em>その手伝いを</em><br class="brk">
             私達がいたします。
           </h1>
           <p class="hero-body">
-            就労継続支援A型事業所「ジョイキャス」は、<br>
-            障がいのある方が安心して働ける職場です。<br>
-            スタッフが丁寧にサポートし、<br>
+            就労継続支援A型事業所「ジョイキャス」は、<br class="brk">
+            障がいのある方が安心して働ける職場です。<br class="brk">
+            スタッフが丁寧にサポートし、<br class="brk">
             一般就労への第一歩を共に歩みます。
           </p>
           <div class="hero-stats">
@@ -1366,7 +1376,7 @@ body {
             </div>
             <div class="sch-foot">
               <div class="sch-foot-num">15</div>
-              <div class="sch-foot-txt">🎉 <em>15:00退社です。</em><br>毎日お疲れさまの気持ちで送り出します。</div>
+              <div class="sch-foot-txt">🎉 <em>15:00退社です。</em><br class="brk">毎日お疲れさまの気持ちで送り出します。</div>
             </div>
           </div>
         </div>
@@ -1462,10 +1472,10 @@ body {
       <div class="p-inner top-align">
         <div class="contact-deco">連</div>
         <div class="p-kicker">Contact Us</div>
-        <h2 class="p-h2" style="color:#fff;">まずは気軽に<br>ご相談ください</h2>
+        <h2 class="p-h2" style="color:#fff;">まずは気軽に<br class="brk">ご相談ください</h2>
         <p class="contact-desc">
-          見学・体験・ご相談は無料です。<br>
-          お電話・メールどちらでもお気軽にどうぞ。<br>
+          見学・体験・ご相談は無料です。<br class="brk">
+          お電話・メールどちらでもお気軽にどうぞ。<br class="brk">
           受付時間：9:30〜17:30（定休日除く）
         </p>
         <div class="contact-methods">
@@ -1527,7 +1537,7 @@ body {
           <div id="mailFormDone" style="display:none;" class="mf-done">
             <div class="mf-done-ico">✅</div>
             <div class="mf-done-title">送信が完了しました</div>
-            <div class="mf-done-desc">お問い合わせありがとうございます。<br>内容を確認の上、担当者よりご連絡いたします。<br>しばらくお待ちください。</div>
+            <div class="mf-done-desc">お問い合わせありがとうございます。<br class="brk">内容を確認の上、担当者よりご連絡いたします。<br class="brk">しばらくお待ちください。</div>
           </div>
         </div>
       </div>
@@ -1539,7 +1549,7 @@ body {
         <div class="p-label">SNS — 08</div>
         <div class="p-kicker">SNS</div>
         <h2 class="p-h2">公式<em>SNS</em></h2>
-        <p class="p-body" style="margin-bottom:0;">最新情報や日常の様子をSNSで発信しています。<br>フォローしてジョイキャスをもっと知ってください。</p>
+        <p class="p-body" style="margin-bottom:0;">最新情報や日常の様子をSNSで発信しています。<br class="brk">フォローしてジョイキャスをもっと知ってください。</p>
         <div class="sns-flex">
           <a href="https://x.com/joycas3131" target="_blank" rel="noopener noreferrer" class="sns-c x">
             <div class="sns-ico x"><svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
