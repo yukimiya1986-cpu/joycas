@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>就労継続支援A型 ジョイキャス｜名古屋市天白区 原駅徒歩1分</title>
+<meta name="description" content="名古屋市天白区原にある就労継続支援A型事業所。障がいのある方が自分のペースで働けます。時給1140円～、10:00〜15:00の短時間勤務。原駅から徒歩1分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=DM+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ROOT & RESET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --bg:      #F5EDE3;
+  --ink:     #3B2212;
+  --mid:     #6B5040;
+  --pale:    #EAD9C8;
+  --rule:    rgba(24,20,16,.1);
+  --red:     #C4622D;
+  --red-d:   #9E4A1E;
+  --gold:    #C4892A;
+  --green:   #2E6B4F;
+  --blue:    #7A4A28;
+  --white:   #FDFAF6;
+
+  --side-w:  260px;
+  --panel-w: calc(100vw - var(--side-w));
+}
+
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html, body { width:100%; height:100%; overflow:hidden; }
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SIDEBAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#sidebar {
+  width: var(--side-w);
+  flex-shrink: 0;
+  height: 100vh;
+  background: #8B5A3A;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.sb-logo {
+  padding: 36px 28px 28px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  flex-shrink: 0;
+}
+.sb-logo-mark {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.sb-logo-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .1em;
+  font-weight: 300;
+}
+
+/* nav links */
+.sb-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 0;
+  scrollbar-width: none;
+}
+.sb-nav::-webkit-scrollbar { display: none; }
+
+.sb-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background .2s;
+  position: relative;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  color: rgba(255,255,255,.45);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+.sb-link:hover { background: rgba(255,255,255,.04); color: rgba(255,255,255,.75); }
+.sb-link.active {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+}
+.sb-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red);
+}
+.sb-link-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,.2);
+  min-width: 20px;
+}
+.sb-link.active .sb-link-num { color: var(--red); }
+
+/* panel progress dots */
+.sb-dots {
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.sb-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  transition: background .3s, width .3s;
+  cursor: pointer;
+}
+.sb-dot.active { background: var(--red); width: 20px; border-radius: 3px; }
+
+.sb-cta {
+  margin: 0 20px 28px;
+  padding: 14px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background .2s;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  flex-shrink: 0;
+}
+.sb-cta:hover { background: var(--red-d); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL TRACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#track {
+  margin-left: var(--side-w);
+  width: var(--panel-w);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#panels {
+  display: flex;
+  height: 100%;
+  transition: transform .65s cubic-bezier(.77,0,.175,1);
+  will-change: transform;
+}
+
+/* each panel = one "page" */
+.panel {
+  width: var(--panel-w);
+  height: 100vh;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pale) transparent;
+  position: relative;
+}
+.panel::-webkit-scrollbar { width: 4px; }
+.panel::-webkit-scrollbar-thumb { background: var(--pale); border-radius: 2px; }
+
+/* ── ARROW NAVIGATION ── */
+.arrow-area {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.arrow-area.left  { left: calc(var(--side-w) + 20px); }
+.arrow-area.right { right: 20px; }
+
+.arr-btn {
+  width: 44px; height: 44px;
+  border: 1px solid var(--rule);
+  background: rgba(240,237,230,.85);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--ink);
+  transition: background .2s, opacity .2s, border-color .2s;
+  opacity: .7;
+}
+.arr-btn:hover { opacity: 1; background: var(--white); border-color: var(--ink); }
+.arr-btn:disabled { opacity: .2; cursor: default; }
+
+/* panel counter */
+.panel-counter {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--mid);
+  letter-spacing: .08em;
+  z-index: 100;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL CONTENTS — shared
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.p-inner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 72px;
+  position: relative;
+}
+.p-inner.top-align {
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
+/* panel label (top-right corner) */
+.p-label {
+  position: absolute;
+  top: 32px; right: 40px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--mid);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+/* big decorative character */
+.p-deco {
+  position: absolute;
+  bottom: -40px; right: -20px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 280px;
+  font-weight: 800;
+  color: rgba(24,20,16,.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -.05em;
+}
+
+/* headings */
+.p-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.p-kicker::after {
+  content: '';
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--red);
+  opacity: .5;
+}
+
+.p-h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(32px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.p-h1 em { font-style: normal; color: var(--red); }
+
+.p-h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.p-h2 em { font-style: normal; color: var(--red); }
+
+.p-body {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 2;
+  max-width: 580px;
+}
+
+/* rule separator */
+.p-rule {
+  width: 60px; height: 1px;
+  background: var(--ink);
+  opacity: .15;
+  margin: 32px 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 0 — HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p0 { background: #F2E0C8; }
+#p0 .p-inner { flex-direction: row; gap: 0; padding: 0; }
+
+.hero-txt {
+  flex: 1;
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.hero-txt::after {
+  content: '';
+  position: absolute;
+  top: 80px; bottom: 80px; right: 0;
+  width: 1px;
+  background: rgba(59,34,18,.1);
+}
+
+.hero-img-col {
+  width: 42%;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-col img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: .75;
+  display: block;
+}
+.hero-img-col::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #F2E0C8 0%, transparent 40%);
+  z-index: 1;
+}
+
+.hero-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: .2em;
+  color: var(--red);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-kicker::after { content:''; width:36px; height:1px; background:var(--red); opacity:.6; }
+
+.hero-h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: #3B2212;
+  margin-bottom: 32px;
+}
+.hero-h1 em { font-style: normal; color: var(--red); }
+
+.hero-body {
+  font-size: 15px;
+  line-height: 2.1;
+  color: #6B5040;
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(59,34,18,.15);
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+.hs-item {
+  flex: 1;
+  padding: 18px 16px;
+  border-right: 1px solid rgba(59,34,18,.1);
+  text-align: center;
+}
+.hs-item:last-child { border-right: none; }
+.hs-num {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3B2212;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hs-num sup { font-size: 13px; }
+.hs-label { font-size: 10px; color: #8B6A52; letter-spacing: .06em; }
+
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-red {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red);
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: .06em;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  transition: background .2s;
+}
+.btn-red:hover { background: var(--red-d); }
+.btn-outline-w {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: #6B5040;
+  padding: 14px 24px;
+  font-size: 14px;
+  letter-spacing: .06em;
+  text-decoration: none;
+  border: 1px solid rgba(59,34,18,.25);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.btn-outline-w:hover { border-color: #8B5A3A; color: #3B2212; }
+
+/* hero floating badge */
+.hero-badge {
+  position: absolute;
+  bottom: 48px; left: -1px;
+  background: var(--red);
+  color: #fff;
+  padding: 16px 22px;
+  border-radius: 0 2px 2px 0;
+  z-index: 5;
+}
+.hb-top { font-size: 10px; letter-spacing: .12em; opacity: .7; margin-bottom: 4px; text-transform: uppercase; }
+.hb-main { font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.hb-sub { font-size: 12px; opacity: .75; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 1 — ABOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p1 { background: var(--white); }
+#p1 .p-inner { padding: 0; }
+
+.about-split {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.about-img-side {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+  background: var(--pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 40px;
+}
+.about-img-side::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 70%, rgba(24,20,16,.2));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-txt-side {
+  flex: 0 0 50%;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--rule);
+  overflow-y: auto;
+}
+
+.about-points {
+  margin-top: 36px;
+  border-top: 1px solid var(--rule);
+}
+.apoint {
+  display: flex; gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.apoint-ico { font-size: 20px; flex-shrink:0; margin-top: 2px; }
+.apoint-title { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+.apoint-desc { font-size: 13px; color: var(--mid); line-height: 1.9; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 2 — WORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p2 { background: var(--bg); }
+#p2 .p-inner { padding: 72px 64px; justify-content: flex-start; }
+
+.work-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 8px;
+}
+.wtile {
+  background: var(--bg);
+  overflow: hidden;
+  transition: background .25s;
+}
+.wtile:hover { background: var(--white); }
+.wtile-img {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+.wtile-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+.wtile:hover .wtile-img img { transform: scale(1.05); }
+.wtile-body { padding: 20px 22px 24px; }
+.wtile-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-style: italic;
+  letter-spacing: .14em; color: var(--red);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.wtile-title { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.wtile-desc { font-size: 13px; color: var(--mid); line-height: 1.85; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 3 — SCHEDULE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p3 { background: var(--blue); }
+#p3 .p-inner { padding: 72px 64px; }
+#p3 .p-kicker { color: #F4A259; }
+#p3 .p-kicker::after { background: #F4A259; }
+#p3 .p-h2 { color: #fff; }
+#p3 .p-h2 em { color: #F4A259; }
+
+.sch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 8px;
+}
+
+.tl { position: relative; }
+.tl::before {
+  content:'';
+  position:absolute;
+  left: 13px; top:0; bottom:0;
+  width: 1px;
+  background: rgba(255,255,255,.08);
+}
+.tl-row {
+  display:flex; gap:18px;
+  padding:14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  align-items:flex-start;
+}
+.tl-row:last-child { border:none; }
+.tl-pip {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  background: var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size: 11px;
+  flex-shrink:0;
+  position:relative; z-index:1;
+}
+.tl-pip.r { border-color: var(--red); }
+.tl-pip.g { border-color: var(--green); }
+.tl-pip.y { border-color: #B07D2A; }
+.tl-time { font-family:'DM Mono',monospace; font-size:11px; color:rgba(255,255,255,.3); margin-bottom:2px; }
+.tl-name { font-size:14px; font-weight:700; color:rgba(255,255,255,.85); }
+.tl-name span { font-size:11px; font-weight:400; color:rgba(255,255,255,.3); margin-left:8px; }
+
+.sch-panel {
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sch-panel-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 17px; font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.sch-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.sch-item:last-child { border: none; }
+.sch-ico { font-size: 18px; flex-shrink:0; width:28px; text-align:center; margin-top: 1px; }
+.sch-item strong { display:block; font-size:13px; font-weight:700; color:rgba(255,255,255,.85); margin-bottom:4px; }
+.sch-item p { font-size:12px; color:rgba(255,255,255,.4); line-height:1.85; }
+
+.sch-foot {
+  margin-top: 28px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 18px 24px;
+  display: flex; gap: 16px; align-items: center;
+}
+.sch-foot-num {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 48px; font-weight: 700;
+  color: rgba(255,255,255,.12);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.sch-foot-txt {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px; font-weight: 700;
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
+.sch-foot-txt em { font-style:normal; color: #F4A259; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 4 — FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p4 { background: var(--white); }
+#p4 .p-inner { padding: 72px 64px; justify-content: flex-start; }
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-top: 8px;
+}
+.fcard {
+  background: var(--white);
+  padding: 36px 32px;
+  display: flex; gap: 20px;
+  align-items: flex-start;
+  transition: background .25s;
+}
+.fcard:hover { background: var(--bg); }
+.fcard.wide {
+  grid-column: span 2;
+  background: var(--ink);
+}
+.fcard.wide:hover { background: #6B4228; }
+.fcard.wide .fcard-title { color: #fff; }
+.fcard.wide .fcard-desc { color: rgba(255,255,255,.5); }
+.fcard-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px; font-style: italic; font-weight: 300;
+  color: rgba(24,20,16,.18);
+  flex-shrink: 0;
+  min-width: 30px;
+  transition: color .25s;
+}
+.fcard:not(.wide):hover .fcard-num { color: var(--red); }
+.fcard.wide .fcard-num { color: rgba(255,255,255,.12); }
+.fcard-img {
+  width: 80px; height: 80px;
+  overflow: hidden; flex-shrink: 0;
+}
+.fcard-img img { width:100%;height:100%;object-fit:contain; }
+.fcard.wide .fcard-img { width:100px;height:100px; }
+.fcard-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px; line-height: 1.5;
+}
+.fcard-desc { font-size: 13px; color: var(--mid); line-height: 1.85; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 5 — ACCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p5 { background: var(--bg); }
+#p5 .p-inner { padding: 0; flex-direction: row; }
+
+.access-map-col {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.access-map-col iframe {
+  width: 100%; height: 100%;
+  display: block; border: none;
+  filter: grayscale(30%) contrast(1.05);
+}
+.access-transit-badge {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: var(--green);
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: .03em;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.access-info-col {
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--white);
+  border-left: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.ai-head {
+  padding: 40px 36px 24px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.ai-head .p-kicker { margin-bottom: 12px; }
+.ai-head .p-h2 { font-size: 24px; margin-bottom: 0; }
+
+.info-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  flex: 1;
+}
+.info-tbl tr { border-bottom: 1px solid var(--rule); }
+.info-tbl tr:last-child { border: none; }
+.info-tbl td { padding: 16px 36px; font-size: 14px; vertical-align: top; line-height: 1.7; }
+.info-tbl td:first-child {
+  width: 30%; color: var(--mid); font-size: 12px;
+  font-weight: 700; letter-spacing: .04em; white-space: nowrap;
+}
+
+.ai-foot {
+  padding: 24px 36px;
+  border-top: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+.btn-block {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 16px;
+  background: var(--red); color: #fff;
+  font-size: 14px; font-weight: 700; letter-spacing: .06em;
+  text-decoration: none; border-radius: 2px;
+  transition: background .2s;
+}
+.btn-block:hover { background: var(--red-d); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 6 — CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p6 { background: var(--red); }
+#p6 .p-inner { padding: 72px 80px; align-items: flex-start; }
+
+.contact-deco {
+  position: absolute;
+  bottom: -60px; right: -40px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 320px; font-weight: 800;
+  color: rgba(255,255,255,.05);
+  line-height: 1; pointer-events: none; user-select: none;
+}
+
+#p6 .p-kicker { color: rgba(255,255,255,.6); }
+#p6 .p-kicker::after { background: rgba(255,255,255,.3); }
+#p6 .p-h2 { color: #fff; font-size: clamp(26px, 3.5vw, 48px); }
+
+.contact-desc { font-size: 16px; color: rgba(255,255,255,.7); line-height: 2.1; margin-bottom: 40px; }
+
+.contact-methods {
+  display: flex; gap: 1px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+.cm {
+  flex: 1; padding: 24px 20px;
+  background: rgba(0,0,0,.08);
+  transition: background .2s;
+}
+.cm:hover { background: rgba(0,0,0,.14); }
+.cm-ico { font-size: 22px; margin-bottom: 8px; }
+.cm-lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 6px; font-weight: 700; }
+.cm-val { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.cm-note { font-size: 11px; color: rgba(255,255,255,.45); line-height: 1.7; }
+
+.btn-white {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; color: var(--red);
+  padding: 16px 36px;
+  font-size: 15px; font-weight: 900;
+  letter-spacing: .05em;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
+  transition: transform .2s, box-shadow .2s;
+  margin-bottom: 48px;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,.2); }
+
+/* Mail form */
+.mf-wrap {
+  background: rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 32px;
+  max-width: 680px;
+  width: 100%;
+}
+.mf-ttl {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 17px; font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mf-group { margin-bottom: 16px; }
+.mf-label {
+  display: block; font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.6); margin-bottom: 7px;
+}
+.mf-req {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: rgba(255,255,255,.9);
+  font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 1px;
+  margin-left: 6px; text-transform: uppercase; letter-spacing: .06em;
+}
+.mf-input, .mf-select, .mf-textarea {
+  width: 100%;
+  background: rgba(255,255,255,.95);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--ink);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.mf-input:focus, .mf-select:focus, .mf-textarea:focus {
+  border-color: rgba(255,255,255,.5);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.15);
+}
+.mf-sel-wrap { position: relative; }
+.mf-select { appearance: none; cursor: pointer; padding-right: 32px; }
+.mf-sel-wrap::after {
+  content: '▾'; position: absolute;
+  right: 12px; top: 50%; transform: translateY(-50%);
+  font-size: 12px; color: var(--mid); pointer-events: none;
+}
+.mf-textarea { height: 110px; resize: vertical; line-height: 1.7; }
+.mf-count { text-align: right; font-size: 10px; color: rgba(255,255,255,.35); margin-top: 4px; }
+.mf-privacy { margin-bottom: 18px; }
+.mf-prv-lbl {
+  display: flex; align-items: center; gap: 9px;
+  cursor: pointer; font-size: 13px; color: rgba(255,255,255,.7);
+}
+.mf-prv-lbl input[type="checkbox"] { width: 16px; height: 16px; accent-color: #fff; cursor: pointer; flex-shrink: 0; }
+.mf-error {
+  background: rgba(255,100,100,.12);
+  border: 1px solid rgba(255,150,150,.4);
+  border-radius: 2px;
+  padding: 10px 14px;
+  font-size: 13px; color: #FFB5B5;
+  margin-bottom: 14px; line-height: 1.7;
+}
+.mf-submit {
+  width: 100%;
+  background: #fff; color: var(--red);
+  border: none; border-radius: 2px;
+  padding: 16px;
+  font-size: 15px; font-weight: 900;
+  cursor: pointer;
+  letter-spacing: .05em;
+  transition: transform .2s, box-shadow .2s, opacity .2s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.mf-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+.mf-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.mf-done { text-align: center; padding: 24px 0; }
+.mf-done-ico { font-size: 48px; margin-bottom: 12px; }
+.mf-done-title { font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.mf-done-desc { font-size: 14px; color: rgba(255,255,255,.7); line-height: 2; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PANEL 7 — SNS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#p7 { background: var(--pale); }
+#p7 .p-inner { padding: 72px 80px; }
+
+.sns-flex { display: flex; gap: 24px; margin-top: 8px; flex-wrap: wrap; }
+.sns-c {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 36px 40px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  min-width: 220px;
+  text-decoration: none;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.sns-c:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(24,20,16,.1); }
+.sns-c.x:hover { border-color: #000; }
+.sns-c.ig:hover { border-color: #C13584; }
+.sns-ico { width:56px;height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.sns-ico.x { background:#000; }
+.sns-ico.ig { background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF); }
+.sns-ico svg { width:26px;height:26px; }
+.sns-name { font-family:'Shippori Mincho',serif; font-size:17px; font-weight:700; color:var(--ink); }
+.sns-c.x .sns-name { color:#000; }
+.sns-c.ig .sns-name { color:#C13584; }
+.sns-handle { font-size:12px; color:var(--mid); }
+.sns-desc { font-size:13px; color:var(--mid); line-height:1.8; text-align:center; max-width:190px; }
+.sns-btn {
+  display:inline-block; padding:9px 22px;
+  border-radius:2px; font-size:13px; font-weight:700; letter-spacing:.04em;
+}
+.sns-c.x .sns-btn { background:#000; color:#fff; }
+.sns-c.ig .sns-btn { background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF); color:#fff; }
+
+/* footer strip inside last panel */
+.footer-strip {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: #8B5A3A;
+  padding: 18px 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; flex-wrap: wrap;
+}
+.fs-logo { color:#fff; font-family:'Shippori Mincho',serif; font-weight:700; font-size:15px; }
+.fs-logo span { display:block; font-family:'Zen Kaku Gothic New',sans-serif; font-size:11px; color:rgba(255,255,255,.3); font-weight:400; margin-top:3px; }
+.fs-sns { display:flex; gap:10px; align-items:center; }
+.fs-copy { font-size:11px; color:rgba(255,255,255,.25); letter-spacing:.04em; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MOBILE (≤768px) — vertical scroll
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 768px) {
+  html, body { overflow: auto; height: auto; }
+  body { flex-direction: column; }
+
+  #sidebar {
+    position: sticky; top: 0; width: 100%; height: auto;
+    flex-direction: row; align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .sb-logo { padding: 14px 0; border: none; }
+  .sb-logo-mark { font-size: 18px; }
+  .sb-nav { display: none; }
+  .sb-dots { display: none; }
+  .sb-cta { margin: 0; padding: 10px 16px; font-size: 12px; }
+
+  #track {
+    margin-left: 0; width: 100%;
+    height: auto; overflow: visible;
+  }
+  #panels {
+    flex-direction: column;
+    transform: none !important;
+    transition: none !important;
+  }
+  .panel {
+    width: 100%; height: auto;
+    overflow: visible;
+  }
+  .arrow-area, .panel-counter { display: none; }
+
+  /* hero */
+  #p0 .p-inner { flex-direction: column; }
+  .hero-img-col { width: 100%; height: 260px; }
+  .hero-img-col::before { background: linear-gradient(to bottom, var(--ink) 0%, transparent 40%); }
+  .hero-txt { padding: 48px 24px 40px; }
+  .hero-stats { flex-direction: column; max-width: 100%; }
+  .hs-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .hs-item:last-child { border: none; }
+  .hero-btns { flex-direction: column; }
+  .hero-badge { display: none; }
+
+  /* about */
+  .about-split { flex-direction: column; }
+  .about-img-side { height: 280px; }
+  .about-txt-side { padding: 48px 24px; border: none; border-top: 1px solid var(--rule); }
+
+  /* work */
+  #p2 .p-inner, #p4 .p-inner, #p7 .p-inner { padding: 56px 24px; }
+  .work-tiles { grid-template-columns: 1fr; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .fcard.wide { grid-column: span 1; }
+
+  /* schedule */
+  #p3 .p-inner { padding: 56px 24px; }
+  .sch-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* access */
+  #p5 .p-inner { flex-direction: column; }
+  .access-map-col { height: 280px; }
+  .access-info-col { width: 100%; border: none; border-top: 1px solid var(--rule); }
+  .ai-head { padding: 28px 24px 18px; }
+  .info-tbl td { padding: 13px 24px; }
+  .ai-foot { padding: 18px 24px; }
+
+  /* contact */
+  #p6 .p-inner { padding: 56px 24px; }
+  .contact-methods { flex-direction: column; max-width: 100%; }
+  .mf-wrap { padding: 22px 16px; }
+  .mf-row { grid-template-columns: 1fr; }
+
+  /* sns */
+  .sns-flex { flex-direction: column; align-items: stretch; }
+  .sns-c { width: 100%; }
+  .footer-strip { padding: 20px 24px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ SIDEBAR ═══════ -->
+<aside id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-logo-mark">ジョイキャス</div>
+    <div class="sb-logo-sub">就労継続支援A型</div>
+  </div>
+
+  <nav class="sb-nav">
+    <button class="sb-link active" data-panel="0">
+      <span class="sb-link-num">01</span>トップ
+    </button>
+    <button class="sb-link" data-panel="1">
+      <span class="sb-link-num">02</span>事業所について
+    </button>
+    <button class="sb-link" data-panel="2">
+      <span class="sb-link-num">03</span>仕事内容
+    </button>
+    <button class="sb-link" data-panel="3">
+      <span class="sb-link-num">04</span>タイムスケジュール
+    </button>
+    <button class="sb-link" data-panel="4">
+      <span class="sb-link-num">05</span>選ばれる理由
+    </button>
+    <button class="sb-link" data-panel="5">
+      <span class="sb-link-num">06</span>アクセス
+    </button>
+    <button class="sb-link" data-panel="6">
+      <span class="sb-link-num">07</span>お問い合わせ
+    </button>
+    <button class="sb-link" data-panel="7">
+      <span class="sb-link-num">08</span>SNS
+    </button>
+  </nav>
+
+  <div class="sb-dots" id="dots"></div>
+  <a href="#" class="sb-cta" id="sb-cta-btn">📞 無料相談・見学</a>
+</aside>
+
+<!-- ═══════ PANEL TRACK ═══════ -->
+<main id="track">
+  <div id="panels">
+
+    <!-- ── P0 HERO ── -->
+    <section class="panel" id="p0">
+      <div class="p-inner">
+        <div class="hero-txt">
+          <div class="hero-kicker">名古屋市天白区・原駅から徒歩1分</div>
+          <h1 class="hero-h1">
+            あなたと社会をつなげる、<br>
+            <em>その手伝いを</em><br>
+            私達がいたします。
+          </h1>
+          <p class="hero-body">
+            就労継続支援A型事業所「ジョイキャス」は、<br>
+            障がいのある方が安心して働ける職場です。<br>
+            スタッフが丁寧にサポートし、<br>
+            一般就労への第一歩を共に歩みます。
+          </p>
+          <div class="hero-stats">
+            <div class="hs-item">
+              <div class="hs-num">1,140<sup>円～</sup></div>
+              <div class="hs-label">時給</div>
+            </div>
+            <div class="hs-item">
+              <div class="hs-num">4<sup>時間</sup></div>
+              <div class="hs-label">1日の就労時間</div>
+            </div>
+            <div class="hs-item">
+              <div class="hs-num">1<sup>分</sup></div>
+              <div class="hs-label">原駅から徒歩</div>
+            </div>
+          </div>
+          <div class="hero-btns">
+            <button class="btn-red" onclick="goPanel(6)">📞 無料相談・見学を申込む</button>
+            <button class="btn-outline-w" onclick="goPanel(1)">📄 事業所について知る</button>
+          </div>
+        </div>
+        <div class="hero-img-col">
+          <img src="img01.jpg" alt="ジョイキャス 事業所内の様子">
+          <div class="hero-badge">
+            <div class="hb-top">現在の就労環境</div>
+            <div class="hb-main">10:00〜15:00</div>
+            <div class="hb-sub">無理なく働ける短時間勤務</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P1 ABOUT ── -->
+    <section class="panel" id="p1">
+      <div class="about-split">
+        <div class="about-img-side">
+          <img src="img02.png" alt="就労継続支援A型 ジョイキャスについて">
+        </div>
+        <div class="about-txt-side">
+          <div class="p-kicker">About Joycas</div>
+          <h2 class="p-h2">就労継続支援A型<br><em>ジョイキャス</em>とは</h2>
+          <p class="p-body">
+            障がいや難病をお持ちの方、一般企業での就労が困難な方に対して、雇用契約を結んだうえで働く機会を提供する福祉サービスです。給料をもらいながら、就労に必要な知識・能力を身に付けられます。
+          </p>
+          <div class="about-points">
+            <div class="apoint">
+              <div class="apoint-ico">📄</div>
+              <div>
+                <div class="apoint-title">雇用契約を締結</div>
+                <div class="apoint-desc">雇用契約に基づいて給料（時給1,140円～）が支払われます。福祉サービスを利用しながら、就労体験を積むことができます。</div>
+              </div>
+            </div>
+            <div class="apoint">
+              <div class="apoint-ico">📈</div>
+              <div>
+                <div class="apoint-title">一般就労を目指せる</div>
+                <div class="apoint-desc">将来的に一般企業への就職を目指す方へ、必要なスキルや生活リズムを整えるサポートを行います。</div>
+              </div>
+            </div>
+            <div class="apoint">
+              <div class="apoint-ico">🤝</div>
+              <div>
+                <div class="apoint-title">スタッフが親身にサポート</div>
+                <div class="apoint-desc">あなたのことをわかってくれるスタッフが常駐。悩みや不安も気軽に相談できる環境づくりを大切にしています。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P2 WORK ── -->
+    <section class="panel" id="p2">
+      <div class="p-inner top-align">
+        <div class="p-label">Work Content — 03</div>
+        <div class="p-kicker">Work Content</div>
+        <h2 class="p-h2">ジョイキャスの<em>お仕事内容</em></h2>
+        <p class="p-body" style="margin-bottom:32px;">未経験でも大丈夫。丁寧な指導のもと、あなたのペースで取り組めるお仕事をご用意しています。</p>
+        <div class="work-tiles">
+          <div class="wtile">
+            <div class="wtile-img"><img src="img03.png" alt="シール貼り・袋詰め作業"></div>
+            <div class="wtile-body">
+              <div class="wtile-tag">軽作業 / Light Work</div>
+              <div class="wtile-title">シール貼り・簡単な組み立て</div>
+              <div class="wtile-desc">座ったまま取り組める軽作業です。シール貼りや袋詰めなど、体に負担なく取り組めます。初めての方にも安心の作業内容です。</div>
+            </div>
+          </div>
+          <div class="wtile">
+            <div class="wtile-img"><img src="img04.png" alt="防災用ヘルメット組付作業"></div>
+            <div class="wtile-body">
+              <div class="wtile-tag">組付作業 / Assembly</div>
+              <div class="wtile-title">防災用ヘルメットの組付</div>
+              <div class="wtile-desc">防災製品の品質を支える大切なお仕事。丁寧に手順を覚えながら取り組めます。ものづくりのやりがいを実感できます。</div>
+            </div>
+          </div>
+          <div class="wtile">
+            <div class="wtile-img"><img src="img05.png" alt="PCデータ入力業務"></div>
+            <div class="wtile-body">
+              <div class="wtile-tag">PCスキル / Data Entry</div>
+              <div class="wtile-title">PCデータ入力業務</div>
+              <div class="wtile-desc">パソコンを使ったデータ入力業務です。タイピングスキルを身に付けながら、事務職への就職にも役立てられます。</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-deco">仕</div>
+      </div>
+    </section>
+
+    <!-- ── P3 SCHEDULE ── -->
+    <section class="panel" id="p3">
+      <div class="p-inner top-align">
+        <div class="p-label" style="color:rgba(255,255,255,.3);">Daily Schedule — 04</div>
+        <div class="p-kicker">Daily Schedule</div>
+        <h2 class="p-h2">1日の<em>タイムスケジュール</em></h2>
+        <p class="p-body" style="margin-bottom:32px; color:rgba(255,255,255,.45);">1時間ごとに休憩をはさみながら、無理なく1日4時間働けるスケジュールです。</p>
+        <div class="sch-grid">
+          <div class="tl">
+            <div class="tl-row">
+              <div class="tl-pip r">🏢</div>
+              <div><div class="tl-time">9:45</div><div class="tl-name">開錠・受付</div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip r">📋</div>
+              <div><div class="tl-time">10:00 〜 11:00</div><div class="tl-name">朝礼 &amp; 作業<span>60分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip g">🍵</div>
+              <div><div class="tl-time">11:00 〜 11:05</div><div class="tl-name">小休憩<span>5分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip r">🔧</div>
+              <div><div class="tl-time">11:05 〜 12:05</div><div class="tl-name">作業<span>60分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip y">🍱</div>
+              <div><div class="tl-time">12:05 〜 12:50</div><div class="tl-name">昼休憩<span>45分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip r">🔧</div>
+              <div><div class="tl-time">12:50 〜 13:50</div><div class="tl-name">作業<span>60分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip g">🍵</div>
+              <div><div class="tl-time">13:50 〜 14:00</div><div class="tl-name">小休憩<span>10分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip r">🔧</div>
+              <div><div class="tl-time">14:00 〜 14:50</div><div class="tl-name">作業<span>50分</span></div></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-pip">✅</div>
+              <div><div class="tl-time">14:50 〜 15:00</div><div class="tl-name">清掃・終礼<span>10分</span></div></div>
+            </div>
+          </div>
+          <div>
+            <div class="sch-panel">
+              <div class="sch-panel-title">ジョイキャスが大切にしていること</div>
+              <div class="sch-item"><div class="sch-ico">🕙</div><div><strong>短時間勤務で無理なく</strong><p>1日4時間、10:00〜15:00の勤務です。体調に合わせて働けます。</p></div></div>
+              <div class="sch-item"><div class="sch-ico">☕</div><div><strong>定期的な休憩</strong><p>1時間ごとに休憩を設けることで、集中力を維持しながら無理なく作業できます。</p></div></div>
+              <div class="sch-item"><div class="sch-ico">💴</div><div><strong>名古屋市の最低賃金以上をお支払い</strong><p>時給1,140円〜。毎月しっかりお給料をお受け取りいただけます。</p></div></div>
+              <div class="sch-item"><div class="sch-ico">🚇</div><div><strong>雨の日も安心の駅チカ</strong><p>地下鉄原駅2番出口から徒歩1分。天候に左右されず通勤できます。</p></div></div>
+            </div>
+            <div class="sch-foot">
+              <div class="sch-foot-num">15</div>
+              <div class="sch-foot-txt">🎉 <em>15:00退社です。</em><br>毎日お疲れさまの気持ちで送り出します。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P4 FEATURES ── -->
+    <section class="panel" id="p4">
+      <div class="p-inner top-align">
+        <div class="p-label">Why Joycas — 05</div>
+        <div class="p-kicker">Why Joycas</div>
+        <h2 class="p-h2">選ばれる<em>4つの理由</em></h2>
+        <p class="p-body" style="margin-bottom:32px;">ジョイキャスが多くの利用者様に選ばれている理由をご紹介します。</p>
+        <div class="feat-grid">
+          <div class="fcard wide">
+            <div class="fcard-num">01</div>
+            <div class="fcard-img"><img src="img06.png" alt="駅チカ徒歩1分"></div>
+            <div>
+              <div class="fcard-title">原駅から徒歩わずか1分！天候に左右されない通勤</div>
+              <div class="fcard-desc">名古屋市営地下鉄鶴舞線「原駅」2番出口から徒歩1分以内。雨の日も雪の日も、地下鉄から出てすぐにビルに入れます。通勤のストレスを最小限に抑え、仕事に集中できる環境を整えています。</div>
+            </div>
+          </div>
+          <div class="fcard">
+            <div class="fcard-num">02</div>
+            <div>
+              <div class="fcard-img"><img src="img07.png" alt="障がいのある方のペースを尊重"></div>
+              <div class="fcard-title">障がいのある方のペースを尊重</div>
+              <div class="fcard-desc">無理に急かすことはしません。あなたのペースに合わせて、少しずつ力を発揮できる環境です。</div>
+            </div>
+          </div>
+          <div class="fcard">
+            <div class="fcard-num">03</div>
+            <div>
+              <div class="fcard-img"><img src="img08.png" alt="あなたをわかってくれるスタッフ"></div>
+              <div class="fcard-title">あなたをわかってくれるスタッフ</div>
+              <div class="fcard-desc">悩みや不安を気軽に相談できるスタッフが常駐。「社内に仲間がいる」安心感を大切にしています。</div>
+            </div>
+          </div>
+          <div class="fcard">
+            <div class="fcard-num">04</div>
+            <div>
+              <div class="fcard-img"><img src="img09.png" alt="一般就労に向けたスキルアップ"></div>
+              <div class="fcard-title">一般就労に向けたスキルアップ</div>
+              <div class="fcard-desc">軽作業からPC入力まで多彩な業務で、就労に必要な経験・スキルを身に付けられます。</div>
+            </div>
+          </div>
+          <div class="fcard">
+            <div class="fcard-num">05</div>
+            <div>
+              <div class="fcard-img"><img src="img10.png" alt="見学・相談は随時受付中"></div>
+              <div class="fcard-title">見学・相談は随時受付中</div>
+              <div class="fcard-desc">まずは見学からどうぞ。施設やスタッフの雰囲気を実際にご確認いただけます。お気軽にご連絡ください。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P5 ACCESS ── -->
+    <section class="panel" id="p5">
+      <div class="p-inner" style="padding:0; flex-direction:row;">
+        <div class="access-map-col">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.5!2d136.9961831!3d35.1255343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA3JzMxLjkiTiAxMzbCsDU5JzQ2LjMiRQ!5e0!3m2!1sja!2sjp!4v1234567890!5m2!1sja!2sjp"
+            allowfullscreen="" loading="lazy" title="ジョイキャス地図">
+          </iframe>
+          <div class="access-transit-badge">🚇 名古屋市営地下鉄鶴舞線「原駅」2番出口 徒歩1分</div>
+        </div>
+        <div class="access-info-col">
+          <div class="ai-head">
+            <div class="p-kicker">Access</div>
+            <h2 class="p-h2">アクセス・<em>施設情報</em></h2>
+          </div>
+          <table class="info-tbl">
+            <tr><td>施設名</td><td>株式会社 JOYCAS<br>就労継続支援A型 ジョイキャス</td></tr>
+            <tr><td>所在地</td><td>〒468-0015<br>名古屋市天白区原1丁目1902<br>山田ビル2F</td></tr>
+            <tr><td>代表者</td><td>横山 武史</td></tr>
+            <tr><td>営業時間</td><td>9:30 〜 17:30</td></tr>
+            <tr><td>定休日</td><td>日曜日・祝日<br>（土曜日は会社カレンダーによる）</td></tr>
+            <tr><td>電話</td><td><a href="tel:0528487316" style="color:var(--red);font-weight:700;text-decoration:none;">052-848-7316</a></td></tr>
+            <tr><td>FAX</td><td>052-848-7317</td></tr>
+            <tr><td>メール</td><td><a href="mailto:joycas0301@yahoo.co.jp" style="color:var(--red);text-decoration:none;">joycas0301@yahoo.co.jp</a></td></tr>
+          </table>
+          <div class="ai-foot">
+            <a href="#" class="btn-block" onclick="goPanel(6);return false;">📞 見学・相談を申し込む</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P6 CONTACT ── -->
+    <section class="panel" id="p6">
+      <div class="p-inner top-align">
+        <div class="contact-deco">連</div>
+        <div class="p-kicker">Contact Us</div>
+        <h2 class="p-h2" style="color:#fff;">まずは気軽に<br>ご相談ください</h2>
+        <p class="contact-desc">
+          見学・体験・ご相談は無料です。<br>
+          お電話・メールどちらでもお気軽にどうぞ。<br>
+          受付時間：9:30〜17:30（定休日除く）
+        </p>
+        <div class="contact-methods">
+          <div class="cm">
+            <div class="cm-ico">📞</div>
+            <div class="cm-lbl">お電話</div>
+            <div class="cm-val">052-848-7316</div>
+            <div class="cm-note">受付 9:30〜17:30<br>（定休日除く）</div>
+          </div>
+          <div class="cm">
+            <div class="cm-ico">📠</div>
+            <div class="cm-lbl">FAX</div>
+            <div class="cm-val">052-848-7317</div>
+            <div class="cm-note">24時間受付</div>
+          </div>
+        </div>
+        <a href="tel:0528487316" class="btn-white">📞 今すぐ電話する</a>
+
+        <div class="mf-wrap">
+          <div class="mf-ttl">✉️ メールでお問い合わせ</div>
+          <div id="mailFormArea">
+            <div class="mf-row">
+              <div class="mf-group">
+                <label class="mf-label">お名前 <span class="mf-req">必須</span></label>
+                <input type="text" id="mf-name" class="mf-input" placeholder="例：山田 太郎" maxlength="50">
+              </div>
+              <div class="mf-group">
+                <label class="mf-label">メールアドレス <span class="mf-req">必須</span></label>
+                <input type="email" id="mf-email" class="mf-input" placeholder="例：example@email.com">
+              </div>
+            </div>
+            <div class="mf-group">
+              <label class="mf-label">お問い合わせ種別 <span class="mf-req">必須</span></label>
+              <div class="mf-sel-wrap">
+                <select id="mf-type" class="mf-select">
+                  <option value="">選択してください</option>
+                  <option value="見学希望">見学希望</option>
+                  <option value="体験希望">体験希望</option>
+                  <option value="サービス内容について">サービス内容について</option>
+                  <option value="給与・待遇について">給与・待遇について</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+            </div>
+            <div class="mf-group">
+              <label class="mf-label">お問い合わせ内容 <span class="mf-req">必須</span></label>
+              <textarea id="mf-message" class="mf-textarea" placeholder="お気軽にご記入ください。" maxlength="1000"></textarea>
+              <div class="mf-count"><span id="mf-count">0</span> / 1000文字</div>
+            </div>
+            <div class="mf-privacy">
+              <label class="mf-prv-lbl">
+                <input type="checkbox" id="mf-privacy">
+                <span>個人情報の取り扱いに同意します</span>
+              </label>
+            </div>
+            <div id="mf-error" class="mf-error" style="display:none;"></div>
+            <button class="mf-submit" id="mf-submit" onclick="submitMailForm()">✉️ 送信する</button>
+          </div>
+          <div id="mailFormDone" style="display:none;" class="mf-done">
+            <div class="mf-done-ico">✅</div>
+            <div class="mf-done-title">送信が完了しました</div>
+            <div class="mf-done-desc">お問い合わせありがとうございます。<br>内容を確認の上、担当者よりご連絡いたします。<br>しばらくお待ちください。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── P7 SNS ── -->
+    <section class="panel" id="p7">
+      <div class="p-inner" style="padding-bottom:120px;">
+        <div class="p-label">SNS — 08</div>
+        <div class="p-kicker">SNS</div>
+        <h2 class="p-h2">公式<em>SNS</em></h2>
+        <p class="p-body" style="margin-bottom:0;">最新情報や日常の様子をSNSで発信しています。<br>フォローしてジョイキャスをもっと知ってください。</p>
+        <div class="sns-flex">
+          <a href="https://x.com/joycas3131" target="_blank" rel="noopener noreferrer" class="sns-c x">
+            <div class="sns-ico x"><svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+            <div class="sns-name">X（旧Twitter）</div>
+            <div class="sns-handle">@joycas3131</div>
+            <div class="sns-desc">最新情報・お知らせを随時ツイート中！</div>
+            <span class="sns-btn">フォローする</span>
+          </a>
+          <a href="https://www.instagram.com/joycas0301" target="_blank" rel="noopener noreferrer" class="sns-c ig">
+            <div class="sns-ico ig"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+            <div class="sns-name">Instagram</div>
+            <div class="sns-handle">@joycas0301</div>
+            <div class="sns-desc">事業所の日常や作業風景を写真でお届け！</div>
+            <span class="sns-btn">フォローする</span>
+          </a>
+        </div>
+      </div>
+      <!-- footer strip -->
+      <div class="footer-strip">
+        <div class="fs-logo">
+          就労継続支援A型 ジョイキャス
+          <span>株式会社 JOYCAS｜名古屋市天白区原1丁目1902 山田ビル2F</span>
+        </div>
+        <div class="fs-sns">
+          <a href="https://x.com/joycas3131" target="_blank" rel="noopener noreferrer"
+            style="width:34px;height:34px;background:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;opacity:.65;transition:opacity .2s;"
+            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
+            <svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/joycas0301" target="_blank" rel="noopener noreferrer"
+            style="width:34px;height:34px;background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);border-radius:6px;display:flex;align-items:center;justify-content:center;opacity:.65;transition:opacity .2s;"
+            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'">
+            <svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+        <div class="fs-copy">© 2024 JOYCAS All Rights Reserved.</div>
+      </div>
+    </section>
+
+  </div><!-- #panels -->
+</main>
+
+<!-- Arrow buttons -->
+<div class="arrow-area left">
+  <button class="arr-btn" id="arr-prev" onclick="shiftPanel(-1)" disabled>←</button>
+</div>
+<div class="arrow-area right">
+  <button class="arr-btn" id="arr-next" onclick="shiftPanel(1)">→</button>
+</div>
+
+<!-- Counter -->
+<div class="panel-counter" id="counter">01 / 08</div>
+
+<script>
+const TOTAL = 8;
+let cur = 0;
+const panels  = document.getElementById('panels');
+const links   = document.querySelectorAll('.sb-link');
+const dotsEl  = document.getElementById('dots');
+const counter = document.getElementById('counter');
+const prevBtn = document.getElementById('arr-prev');
+const nextBtn = document.getElementById('arr-next');
+
+// build dots
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement('div');
+  d.className = 'sb-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goPanel(i);
+  dotsEl.appendChild(d);
+}
+
+function goPanel(n) {
+  if (n < 0 || n >= TOTAL) return;
+  cur = n;
+  // slide track
+  const W = document.getElementById('track').offsetWidth;
+  panels.style.transform = `translateX(-${cur * W}px)`;
+  // sidebar
+  links.forEach((l, i) => l.classList.toggle('active', i === cur));
+  // dots
+  dotsEl.querySelectorAll('.sb-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  // counter
+  counter.textContent = String(cur + 1).padStart(2,'0') + ' / ' + String(TOTAL).padStart(2,'0');
+  // arrows
+  prevBtn.disabled = cur === 0;
+  nextBtn.disabled = cur === TOTAL - 1;
+  // scroll panel to top
+  document.querySelectorAll('.panel')[cur].scrollTop = 0;
+}
+
+function shiftPanel(d) { goPanel(cur + d); }
+
+// sidebar link clicks
+links.forEach(l => l.addEventListener('click', () => goPanel(+l.dataset.panel)));
+
+// sb-cta → contact panel
+document.getElementById('sb-cta-btn').addEventListener('click', e => { e.preventDefault(); goPanel(6); });
+
+// keyboard
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') shiftPanel(1);
+  if (e.key === 'ArrowLeft')  shiftPanel(-1);
+});
+
+// touch swipe (horizontal)
+let tx = null;
+document.getElementById('track').addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+document.getElementById('track').addEventListener('touchend', e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) shiftPanel(dx < 0 ? 1 : -1);
+  tx = null;
+}, { passive: true });
+
+// resize → re-translate
+window.addEventListener('resize', () => {
+  const W = document.getElementById('track').offsetWidth;
+  panels.style.transition = 'none';
+  panels.style.transform = `translateX(-${cur * W}px)`;
+  requestAnimationFrame(() => { panels.style.transition = ''; });
+});
+
+// mail form
+const mfMsg = document.getElementById('mf-message');
+if (mfMsg) mfMsg.addEventListener('input', () => { document.getElementById('mf-count').textContent = mfMsg.value.length; });
+
+function submitMailForm() {
+  const name    = document.getElementById('mf-name').value.trim();
+  const email   = document.getElementById('mf-email').value.trim();
+  const type    = document.getElementById('mf-type').value;
+  const message = document.getElementById('mf-message').value.trim();
+  const privacy = document.getElementById('mf-privacy').checked;
+  const errEl   = document.getElementById('mf-error');
+  const errors  = [];
+  if (!name)    errors.push('・お名前を入力してください');
+  if (!email)   errors.push('・メールアドレスを入力してください');
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('・正しいメールアドレスの形式で入力してください');
+  if (!type)    errors.push('・お問い合わせ種別を選択してください');
+  if (!message) errors.push('・お問い合わせ内容を入力してください');
+  if (!privacy) errors.push('・個人情報の取り扱いへの同意が必要です');
+  if (errors.length > 0) {
+    errEl.innerHTML = errors.join('<br>');
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  const subject = encodeURIComponent(`【ジョイキャスHP】${type}：${name} 様`);
+  const body    = encodeURIComponent(`お名前：${name}\nメールアドレス：${email}\nお問い合わせ種別：${type}\n\n【お問い合わせ内容】\n${message}`);
+  const btn = document.getElementById('mf-submit');
+  btn.disabled = true; btn.textContent = '送信中...';
+  window.location.href = `mailto:joycas0301@yahoo.co.jp?subject=${subject}&body=${body}`;
+  setTimeout(() => {
+    document.getElementById('mailFormArea').style.display = 'none';
+    document.getElementById('mailFormDone').style.display = 'block';
+  }, 1200);
+}
+</script>
+</body>
+</html>
